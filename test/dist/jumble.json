@@ -1,0 +1,6 @@
+{
+    "type": "html",
+    "name": "test",
+    "main": "index.html",
+    "saveDirectories": ["dist"]
+}

@@ -1,0 +1,39 @@
+{
+    "name": "jumble",
+    "version": "0.0.1",
+    "preferGlobal": "true",
+    "engines": { "node": "*" },
+    "description": "Build apps, and modules with browserify, and uglify.",
+    "author": "Quentin Engles",
+    "dependencies": {
+        "browserify": "9.*",
+        "uglify-js": "2.*",
+        "yargs": "3.*",
+        "chokidar": "1.*",
+        "graceful-fs": "3.*",
+        "cheerio": "0.*",
+        "ncp": "2.*",
+        "rimraf": "2.*",
+        "babelify": "6.*",
+        "mkdirp": "0.*",
+        "glob": "5.*",
+        "tmp": "0.*"
+    },
+    "bin": {
+        "jumble": "./index.js"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hollowdoor/jumble.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "build",
+        "browserify",
+        "task",
+        "modules",
+        "app",
+        "apps"
+    ]
+}
