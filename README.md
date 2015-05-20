@@ -9,6 +9,8 @@ Install
 Run
 ---
 
+In a folder that contains an html file (index.html) with an optional json manifest:
+
 `user@computer:~$ jumble`
 
 Why?
@@ -21,7 +23,7 @@ There are other build systems that serve also as task systems. Jumble focuses on
 How?
 ----
 
-Jumble processes script links in an html page, and trys to read them if they exist.
+Jumble processes script links in an html file, and trys to read them if they exist.
 
 If the files are found the scripts are parsed with **browserify**. There is an intermediate state with a json file, but that is not so important.
 
