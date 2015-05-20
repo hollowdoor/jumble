@@ -17,6 +17,12 @@ var path = require('path'),
 //git push -u origin master
 //npm publish
 
+/*TODO
+inline, and minify css in html
+polyfiller integration
+syntax checking
+*/
+
 module.exports.readJSON = require('./lib/read_json');
 module.exports.bundle = bundle;
 module.exports.unpack = unpack;
