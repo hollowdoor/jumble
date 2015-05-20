@@ -105,7 +105,7 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 ```
 
 
-The most important manifest fields used by jumble.
+### The most important manifest fields used by jumble.
 
 ```
     name        It's optional, but it is used.
@@ -122,7 +122,7 @@ The most important manifest fields used by jumble.
     
 ```
 
-Other useful manifest fields.
+### Other useful manifest fields.
 
 ```
     files       Non-script files to move with the build.
@@ -142,8 +142,11 @@ The Module
 
 Jumble can be used as a module.
 
+### require('jumble').make(options)
 
+The make method does the same as running `jumble` in the command line. Options are the same as if you used the command line. Make will even look for a `manifest` file.
 
+Make returns a modified options object.
 
 JSON Output
 -----------
