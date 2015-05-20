@@ -4,12 +4,12 @@ Jumble
 Install
 -------
 
-npm install jumble -g
+`npm install jumble -g`
 
 Run
 ---
 
-user@computer:~$ jumble
+`user@computer:~$ jumble`
 
 Why?
 ----
@@ -95,7 +95,7 @@ For a basic project you can use `main`, but you can also use `start`, `launch_pa
 
 If a manifest is not found, or one of those fields are not found in a manifest the file name `index.html` will be used if one is found.
 
-###A minimal manifest file that Jumble can use.###
+### A minimal manifest file that Jumble can use.
 
 ```json
 {
@@ -133,7 +133,7 @@ Other useful manifest fields.
                 folders will be ignored.
 ```
 
-###Notes on files, and directory fields###
+### Notes on files, and directory fields
 
 If you have scripts in your html they will be parsed, and moved so there is no need to put those in the files, or directories fields.
 
