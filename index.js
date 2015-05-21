@@ -18,7 +18,7 @@ var path = require('path'),
 //npm publish
 
 /*TODO
-inline, and minify css in html
+COMPLETE inline, and minify css in html
 polyfiller integration
 syntax checking
 test file and icon moving

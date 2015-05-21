@@ -44,7 +44,7 @@
 29 error   code: 'EACCES',
 29 error   path: '/home/spirit/.npm/jumble/0.0.1/package/package.json' }
 30 error Please try running this command again as root/Administrator.
-31 error System Linux 3.13.0-52-generic
+31 error System Linux 3.13.0-53-generic
 32 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g"
 33 error cwd /home/spirit/Projects/Apps/jumble
 34 error node -v v0.10.37

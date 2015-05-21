@@ -18,7 +18,8 @@
         "mkdirp": "0.*",
         "glob": "5.*",
         "tmp": "0.*",
-        "clean-css": "3.*"
+        "clean-css": "3.*",
+        "syntax-error": "1.*"
     },
     "bin": {
         "jumble": "./index.js"

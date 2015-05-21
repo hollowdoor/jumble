@@ -2,5 +2,10 @@
     "type": "html",
     "name": "test",
     "main": "index.html",
-    "saveDirectories": ["dist"]
+    "es6": true,
+    "icons": {
+        "512": "/img/icon-512.png",
+        "128": "/img/icon-128.png"
+    },
+    "directories": ["lib"]
 }

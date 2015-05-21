@@ -153,6 +153,8 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 
 If you have scripts in your html they will be parsed, and moved so there is no need to put those in the files, or directories fields.
 
+The icons in a `manifest` json file will be automatically moved so you don't have add those to the files field.
+
 The Module
 ----------
 
