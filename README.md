@@ -31,6 +31,15 @@ If a directory is specified a folder will be created, and the built project will
 
 If all is well you should find a build folder for your project. When you open the main `html` file from that build folder in a browser, or webview it should work.
 
+A summary of what jumble does
+-----------------------------
+
+When you run jumble on the command line it looks for an html file specified in your manifest, or it looks for index.html. If jumble finds an html file it starts looking for other file associated with that file to compile.
+
+Jumble compiles javascript with browserify, inlines css minified, and moves the files to a new directory.
+
+Hopefully the html file will run in a browser/webview, just like it would without being compiled with jumble.
+
 References
 ----------
 
@@ -127,6 +136,11 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 ### Other useful manifest fields.
 
 ```
+    inline      An array of file types to make inline.
+                Most likely css. Even though it's an array
+                no other types can be inline yet. The
+                default is ['css']
+                
     files       Non-script files to move with the build.
     
     directories Move these directories with the build.

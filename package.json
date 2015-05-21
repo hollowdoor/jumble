@@ -17,7 +17,8 @@
         "babelify": "6.*",
         "mkdirp": "0.*",
         "glob": "5.*",
-        "tmp": "0.*"
+        "tmp": "0.*",
+        "clean-css": "3.*"
     },
     "bin": {
         "jumble": "./index.js"

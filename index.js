@@ -21,6 +21,7 @@ var path = require('path'),
 inline, and minify css in html
 polyfiller integration
 syntax checking
+test file and icon moving
 */
 
 module.exports.readJSON = require('./lib/read_json');
