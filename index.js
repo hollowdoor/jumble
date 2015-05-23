@@ -11,11 +11,13 @@ var path = require('path'),
         .alias('n', 'name')
         .alias('l', 'location').argv;
 
-//git remote add origin https://github.com/hollowdoor/jumble.git
-//---
-//iteration
-//git push -u origin master
-//npm publish
+/*
+git remote add origin https://github.com/hollowdoor/jumble.git
+---
+iteration
+git push -u origin master
+npm publish
+*/
 
 /*TODO
 COMPLETE inline, and minify css in html

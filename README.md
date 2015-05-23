@@ -34,7 +34,7 @@ If all is well you should find a build folder for your project. When you open th
 A summary of what jumble does
 -----------------------------
 
-When you run jumble on the command line it looks for an html file specified in your manifest, or it looks for index.html. If jumble finds an html file it starts looking for other file associated with that file to compile.
+When you run jumble on the command line it looks for an html file specified in your manifest, or it looks for index.html. If jumble finds an html file it starts looking for other files associated with that file to compile.
 
 Jumble compiles javascript with browserify, inlines css minified, and moves the files to a new directory.
 
@@ -75,6 +75,8 @@ Notes on the es6 option.
 ------------------------
 
 There are caveats using Babel. Visit their documentation to find out what those are.
+
+Some info about how to make es6 modules available for babelify can be found here https://github.com/babel/babelify.
 
 The Manifest
 ------------
