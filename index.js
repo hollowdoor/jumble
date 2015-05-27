@@ -3,13 +3,20 @@ var path = require('path'),
     bundle = require('./lib/bundle'),
     unpack = require('./lib/unpack'),
     watch = require('./lib/watch'),
+    startServer = require('./lib/startserver'),
+    
     argv = require('yargs')
         .alias('w', 'watch')
         .alias('m', 'minify')
         .alias('e', 'es6')
         .alias('r', 'raw')
         .alias('n', 'name')
-        .alias('l', 'location').argv;
+        .alias('l', 'location')
+        .options('s', {
+            alias: 'server',
+            type: 'string'
+         })
+        .argv;
 
 /*
 git remote add origin https://github.com/hollowdoor/jumble.git
@@ -39,6 +46,13 @@ if(require.main === module){
     
     if(argv.watch)
         watch(opts, run);
+    
+    if(argv.server){
+        startServer({
+            destination:opts.destination,
+            arg: argv.server
+        });
+    }
 }
 
 function run(){

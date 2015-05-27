@@ -176,3 +176,14 @@ An intermediary json file is created by jumble using the name from the name fiel
 If no manifest is found `mybundle_bundle.json` will be created. If a manifest with a name field is found `{name in manifest}_bundle.json` will be created.
 
 For the most part you can ignore this json file. If you want you can explore it to see if you would like to do something crazy with it. Perhaps sending it over the wire to a server to install remotely would be interesting.
+
+The idea
+--------
+
+I'm most interested in standards. This means the roadmap for jumble will be to mostly to add features that are compliant with standards that can easily be rolled back if those standards change. Other far away standards based features, or odd ball experiments will be optional. Everything that's "set in stone", but maybe not yet implemented by all browsers will be defaults. I'll try to follow the controversy so I can figure out what those are.
+
+Even if the standards are completely implemented I'll try to keep development going because compilation can still be useful in the case that condensed files are easier to send over the wire. Polyfills for complete standards will be removed as time moves forward. That is except for modules which will become optional because you just won't compile if you don't want to.
+
+That being said all the crazy stuff like web components could benefit from compilation so we'll see.
+
+Thank you to those who work on browserify, babel, and the many other modules that jumble takes advantage of.

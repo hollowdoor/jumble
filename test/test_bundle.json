@@ -2,7 +2,7 @@
     "name": "test",
     "cwd": "/home/spirit/Projects/Apps/jumble/test",
     "main": "index.html",
-    "html": "<!DOCTYPE html>\n<html>\n<head>\n\n <style type=\"text/css\">body{background-color:#000;color:#fff}</style>\n</head>\n<body>\n\n<script src=\"index.js\"></script>\n<script>\n\n</script>\n\n</body>\n</html>\n\n",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n\n <style type=\"text/css\">body{background-color:#000;color:#fff}</style>\n</head>\n<body>\nThis is a test\n<img src=\"img/icon-128.png\">\n<script src=\"index.js\"></script>\n<script>\n\n</script>\n\n</body>\n</html>\n\n",
     "scripts": [
         {
             "name": "index.js",
