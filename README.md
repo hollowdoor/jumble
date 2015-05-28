@@ -106,14 +106,21 @@ You can then
 
 ```javascript
 //The "index.js file"
-export default {func: function(){}};
+export default class Thing {
+    speak(){
+        var str = '<p>I am a thing object.</p>';
+        document.querySelector('body').innerHTML += str;
+    }
+}
 ```
 
 then in your application javascript
 
 ```javascript
 //My application
-import name from "module_name";
+import Thing from "module_name";
+var thing = new Thing();
+thing.speak();
 ```
 
 The module_name works without a path.
