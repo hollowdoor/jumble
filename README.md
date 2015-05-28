@@ -40,11 +40,6 @@ Jumble compiles javascript with browserify, inlines css minified, and moves the 
 
 Hopefully the html file will run in a browser/webview, just like it would without being compiled with jumble.
 
-References
-----------
-
-Jumble uses **browserify** to compile javascript modules.
-
 Command line usage
 ------------------
 
@@ -82,6 +77,10 @@ Notes on the es6 option.
 There are caveats using Babel. Visit their documentation to find out what those are.
 
 Some info about how to make es6 modules available for babelify can be found here https://github.com/babel/babelify.
+
+All modules that aren't in node_modules directory can be compiled by babelify.
+
+For npm modules in node_modules directory see the next section.
 
 ### How to do es6 in an npm module that jumble can consume
 
@@ -172,7 +171,7 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 ```
     name        It's optional, but it is used.
     
-    main        The main html file. The fields can be used instead:
+    main        The main html file. These fields can be used instead:
                 start, launch_path, start_url.
     
     minify      Minify output. Optional defaulting to true.
@@ -236,3 +235,12 @@ Even if the standards are completely implemented I'll try to keep development go
 That being said all the crazy stuff like web components could benefit from compilation so we'll see.
 
 Thank you to those who work on browserify, babel, and the many other modules that jumble takes advantage of.
+
+References
+----------
+
+Jumble uses these modules
+* browserify to compile commonjs javascript modules.
+* babelify to compile es6 modules to commonjs
+* clean-css to minify linked styles
+* cheerio to get links from html
