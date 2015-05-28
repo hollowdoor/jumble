@@ -7,12 +7,17 @@ var path = require('path'),
     
     argv = require('yargs')
         .alias('w', 'watch')
-        .alias('m', 'minify')
+        
         .alias('e', 'es6')
         .alias('r', 'raw')
         .alias('n', 'name')
         .alias('l', 'location')
-        .options('s', {
+        .option('m', {
+            alias: 'minify',
+            type: 'boolean',
+            default: true
+         })
+        .option('s', {
             alias: 'server',
             type: 'string'
          })

@@ -52,7 +52,7 @@ The **destination** argument is optional. A folder named **dist** will be create
 
 ```
 Run the command
-user@computer:~$ jumble desination {options}
+user@computer:~$ jumble destination {options}
 
     --watch, -w         Watch the current directory for changes.
                         When there's a change rebuild the project.
@@ -69,6 +69,11 @@ user@computer:~$ jumble desination {options}
     
     --location, -l      Where to store the json output.
     
+    --server -s         -s, -s=8080, -s=folder:8080
+                        Start a static server.
+                        The value should be a port number or a directory, and port seperated by a colon.
+                        If there's no value then jumble will scan for an available port. 
+    
 ```
 
 Notes on the es6 option.
@@ -77,6 +82,43 @@ Notes on the es6 option.
 There are caveats using Babel. Visit their documentation to find out what those are.
 
 Some info about how to make es6 modules available for babelify can be found here https://github.com/babel/babelify.
+
+### How to do es6 in an npm module that jumble can consume
+
+In your package.json add these fields
+
+```json
+{
+    "name": "module_name",
+    "main": "index.js",
+    "dependencies": {
+        "babelify": "{version number}"
+    },
+    "browserify": {
+        "transform": ["babelify"]
+    }
+}
+```
+
+to allow jumble to browserify your es6 module to bundles.
+
+You can then
+
+```javascript
+//The "index.js file"
+export default {func: function(){}};
+```
+
+then in your application javascript
+
+```javascript
+//My application
+import name from "module_name";
+```
+
+The module_name works without a path.
+
+**Please make that somewhere in your module documentation you let users know it's an es6 only module.** I don't know if you can conditional support es6, and commonjs. The node environment might belch on syntax errors. Perhaps an harmony flag can be set when you run node. Otherwise there's always io.js :).
 
 The Manifest
 ------------
