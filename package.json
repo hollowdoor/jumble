@@ -3,7 +3,7 @@
     "version": "0.0.4",
     "preferGlobal": "true",
     "engines": { "node": "*" },
-    "description": "Build apps with browserify, and uglify.",
+    "description": "Build apps with browserify.",
     "author": "Quentin Engles",
     "dependencies": {
         "browserify": "9.*",

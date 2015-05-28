@@ -35,7 +35,7 @@ npm publish
 COMPLETE inline, and minify css in html
 polyfiller integration
 syntax checking
-test file and icon moving
+COMPLETE test file and icon moving
 */
 
 module.exports.readJSON = require('./lib/read_json');
