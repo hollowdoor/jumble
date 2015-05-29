@@ -124,7 +124,7 @@ thing.speak();
 
 The module_name works without a path.
 
-**Please make that somewhere in your module documentation you let users know it's an es6 only module.** I don't know if you can conditional support es6, and commonjs. The node environment might belch on syntax errors. Perhaps an harmony flag can be set when you run node. Otherwise there's always io.js :).
+**Please make sure that somewhere in your module documentation you let users know it's an es6 only module.** I don't know if you can conditional support es6, and commonjs. The node environment might belch on syntax errors. Perhaps an harmony flag can be set when you run node. Otherwise there's always io.js :).
 
 The Manifest
 ------------

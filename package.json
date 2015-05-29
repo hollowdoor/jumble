@@ -38,6 +38,9 @@
         "task",
         "modules",
         "app",
-        "apps"
+        "apps",
+        "html5",
+        "es6",
+        "babel"
     ]
 }
