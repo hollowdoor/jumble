@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var path = require('path'),
     bundle = require('./lib/bundle'),
-    unpack = require('./lib/unpack'),
     watch = require('./lib/watch'),
     startServer = require('./lib/startserver'),
     
@@ -40,7 +39,6 @@ COMPLETE test file and icon moving
 
 module.exports.readJSON = require('./lib/read_json');
 module.exports.bundle = bundle;
-module.exports.unpack = unpack;
 module.exports.make = make;
 module.exports.watch = watch;
 
@@ -76,8 +74,17 @@ function run(){
             options[n] = argv[n];
     }
     
-    return make(options);
+    var b = make(options);
     
+    b.on('error', function(e){
+        console.log(e);
+    });
+    
+    b.on('complete', function(packname){
+        console.log('jumble is done writing everything!');
+    });
+    
+    return b;
 }
 
 function make(opts){
@@ -89,13 +96,7 @@ function make(opts){
     
     var b = bundle(options.main, options);
     
-    b.on('error', function(e){
-        console.log(e);
-    });
     
-    b.on('complete', function(packname){
-        console.log('jumble is done writing everything!');
-    });
     
     return b;
 }

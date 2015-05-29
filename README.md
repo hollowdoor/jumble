@@ -208,22 +208,58 @@ The icons in a `manifest` json file will be automatically moved so you don't hav
 The Module
 ----------
 
-Jumble can be used as a module.
+**The programmable interface has been changed. It is now an EventEmitter**
 
 ### require('jumble').make(options)
 
-The make method does the same as running `jumble` in the command line. Options are the same as if you used the command line. Make will even look for a `manifest` file.
+```javascript
+var options = {
+    "name": "myapp",
+    "main": "index.html",
+    "es6": true,
+    "destination": "distro"
+};
+var b = require('jumble').make(options);
 
-Make returns a modified options object.
+b.on('error', function(e){
+    console.log(e);
+});
+
+b.on('complete', function(scriptNames){
+    console.log('jumble is done writing everything!');
+});
+```
+
+The make method does the same as running `jumble` in the command line. Options are the same as if you used the command line except for the **watch**, and **server** options which are only available in cmd. Make will even look for a `manifest` file.
+
+--Make returns a modified options object.--
+
+`jumble.make` returns an EventEmitter with **error**, and **complete** events.
+
+`b.options` is a reference to the `options` passed to `jumble.make`.
+
+### b.on("bundle", function(bundle){})
+
+When a **browserify** bundle is generated for a discovered script the **bundle** event is emitted.
+
+```
+b.on("bundle", function(name, bundle){
+    bundle.pipe(fs.createWriteStream(path.join(process.cwd(), "output/", name)));
+});
+```
 
 JSON Output
 -----------
 
-An intermediary json file is created by jumble using the name from the name field in you manifest.
+--An intermediary json file is created by jumble using the name from the name field in you manifest.--
 
-If no manifest is found `mybundle_bundle.json` will be created. If a manifest with a name field is found `{name in manifest}_bundle.json` will be created.
+--If no manifest is found `mybundle_bundle.json` will be created. If a manifest with a name field is found `{name in manifest}_bundle.json` will be created.--
 
-For the most part you can ignore this json file. If you want you can explore it to see if you would like to do something crazy with it. Perhaps sending it over the wire to a server to install remotely would be interesting.
+--For the most part you can ignore this json file. If you want you can explore it to see if you would like to do something crazy with it. Perhaps sending it over the wire to a server to install remotely would be interesting.--
+
+**jumble no longer outputs an intermmediate json file. For me this was too slow. The streams, and events are much faster especially for a watched directory. This also makes the codebase easier to manage.**
+
+I might add this back later if there is any call for it. There could be uses for a `json` output I haven't thought of yet.
 
 The idea
 --------
