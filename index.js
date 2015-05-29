@@ -47,7 +47,8 @@ module.exports.watch = watch;
 
 if(require.main === module){
     
-    var opts = run();
+    var b = run(),
+        opts = b.options;
     
     if(argv.watch)
         watch(opts, run);
@@ -86,8 +87,15 @@ function make(opts){
     for(var n in opts)
         options[n] = opts[n];
     
-    return bundle(options.main, options, function(err, filename){
-        
-        unpack(filename, options.destination, function(){});
+    var b = bundle(options.main, options);
+    
+    b.on('error', function(e){
+        console.log(e);
     });
+    
+    b.on('complete', function(packname){
+        console.log('jumble is done writing everything!');
+    });
+    
+    return b;
 }

@@ -8,6 +8,7 @@
     "dependencies": {
         "browserify": "9.*",
         "uglify-js": "2.*",
+        "uglifyify": "3.*",
         "yargs": "3.*",
         "chokidar": "1.*",
         "graceful-fs": "3.*",
