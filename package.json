@@ -1,13 +1,12 @@
 {
     "name": "jumble",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "preferGlobal": "true",
     "engines": { "node": "*" },
     "description": "Build apps with browserify.",
     "author": "Quentin Engles",
     "dependencies": {
         "browserify": "9.*",
-        "uglify-js": "2.*",
         "uglifyify": "3.*",
         "yargs": "3.*",
         "chokidar": "1.*",
