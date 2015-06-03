@@ -5,7 +5,7 @@ require('./lib/bla')('Bla!');
 
 import bla from "./lib/bla";
 
-bla('es6 yay!');
+bla(' es6 yay! ');
 
 import Thing from "thing";
 //import Thing from "./thing";
