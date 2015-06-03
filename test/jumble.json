@@ -8,5 +8,6 @@
         "128": "/img/icon-128.png"
     },
     "files": ["ignored.js"],
+    "directories": ["lib"],
     "minify": false
 }

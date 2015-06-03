@@ -20,23 +20,12 @@ Sometimes I just want to have everything build, and be done.
 
 There are other build systems that serve also as task systems. Jumble focuses on a small set of those tasks namely app bundling. By being a simple command that just does the one thing it makes it easy to work with.
 
-How?
-----
-
-Jumble processes script links in an html file, and trys to read them if they exist.
-
-If the files are found the scripts are parsed with **browserify**. There is an intermediate state with a json file, but that is not so important.
-
-If a directory is specified a folder will be created, and the built project will be sent to that folder.
-
-If all is well you should find a build folder for your project. When you open the main `html` file from that build folder in a browser, or webview it should work.
-
-A summary of what jumble does
+How? A summary of what jumble does
 -----------------------------
 
 When you run jumble on the command line it looks for an html file specified in your manifest, or it looks for index.html. If jumble finds an html file it starts looking for other files associated with that file to compile.
 
-Jumble compiles javascript with browserify, inlines css minified, and moves the files to a new directory.
+Jumble compiles javascript with **browserify**, inlines css minified, and moves the files to a new directory.
 
 Hopefully the html file will run in a browser/webview, just like it would without being compiled with jumble.
 
@@ -61,8 +50,6 @@ user@computer:~$ jumble destination {options}
                         with unmodified code for each script.
     
     --name, -n          The name of your project.
-    
-    --location, -l      Where to store the json output.
     
     --server -s         -s, -s=8080, -s=folder:8080
                         Start a static server.
