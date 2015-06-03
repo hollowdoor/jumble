@@ -29,6 +29,11 @@ Jumble compiles javascript with **browserify**, inlines css minified, and moves 
 
 Hopefully the html file will run in a browser/webview, just like it would without being compiled with jumble.
 
+Have a problem?
+---------------
+
+Yell at me on github in the issues. Major changes are all over the place so beware. The interface is starting to solidify, but there are still little problems that pop up.
+
 Command line usage
 ------------------
 
@@ -196,6 +201,8 @@ The Module
 ----------
 
 **The programmable interface has been changed. It is now an EventEmitter**
+
+**Be aware that the module interface is in flux so there can be breaking changes. It will be stable one day, and it's very close.**
 
 ### require('jumble').make(options)
 
