@@ -14,3 +14,5 @@ import Thing from "thing";
 var thing = new Thing();
 console.log(thing);
 thing.speak();
+
+require('./lib/ex')();

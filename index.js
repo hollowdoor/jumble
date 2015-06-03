@@ -13,8 +13,7 @@ var path = require('path'),
         .alias('l', 'location')
         .option('m', {
             alias: 'minify',
-            type: 'boolean',
-            default: true
+            type: 'boolean'
          })
         .option('s', {
             alias: 'server',
