@@ -25,9 +25,9 @@ var thing = new _thing2['default']();
 console.log(thing);
 thing.speak();
 
-require('./lib/ex')();
+//require('./lib/ex')();
 
-},{"./lib/bla":2,"./lib/ex":3,"path":5,"thing":4}],2:[function(require,module,exports){
+},{"./lib/bla":2,"path":4,"thing":3}],2:[function(require,module,exports){
 'use strict';
 
 module.exports = function (str) {
@@ -36,16 +36,6 @@ module.exports = function (str) {
 };
 
 },{}],3:[function(require,module,exports){
-"use strict";
-
-var thing = function thing() {
-    return "stuff";
-};
-module.exports = function () {
-    console.log("I'm the ex module.");
-};
-
-},{}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -75,7 +65,7 @@ var Thing = (function () {
 exports['default'] = Thing;
 module.exports = exports['default'];
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -303,7 +293,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":6}],6:[function(require,module,exports){
+},{"_process":5}],5:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};

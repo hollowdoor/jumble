@@ -15,4 +15,5 @@ var thing = new Thing();
 console.log(thing);
 thing.speak();
 
+//The external module
 require('./lib/ex')();
