@@ -17,10 +17,11 @@
         "babelify": "6.*",
         "mkdirp": "0.*",
         "glob": "5.*",
-        "tmp": "0.*",
         "clean-css": "3.*",
         "syntax-error": "1.*",
-        "mime": "1.*"
+        "mime": "1.*",
+        "tmp": "0.*",
+        "derequire": "2.*"
     },
     "bin": {
         "jumble": "./index.js"
