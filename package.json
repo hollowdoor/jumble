@@ -1,6 +1,6 @@
 {
     "name": "jumble",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "preferGlobal": "true",
     "engines": { "node": "*" },
     "description": "Build apps with browserify.",
