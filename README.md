@@ -74,14 +74,90 @@ All modules that aren't in node_modules directory can be compiled by babelify.
 
 For npm modules in node_modules directory see the next section.
 
-### How to do es6 in an npm module that jumble can consume
+How to do es6 in an npm module that jumble can consume
+------------------------------------------------------
+
+### The best way to do es6 modules for npm
+
+Install browserify: `npm install -g browserify`
+
+Install babelify `npm install --save-dev babelify`
+
+Install browserify-derequire `npm install --save-dev browserify-derequire`
+
+Change **mymodule** to the name you want, and in your package.json write:
+
+```json
+{
+    "name": "mymodule",
+    "main": "dist/bundle.js",
+    "version": <version>,
+    "prepublish": "browserify -p browserify-derequire index.js -t babelify -o dist/bundle.js --standalone mymodule"
+}
+```
+
+The **prepublish** field will bundle your script so it will work with node, browserify, jumble, or even in a script link.
+
+This is accomplish with the **browserify-derequire** plugin, and the `--standalone` option that gives your module a **umd** definition. The **umd** allows your module to run almost anywhere. The **browserify-derequire** plugin changes any require function names to `_dereq_`. This way there's no **module not found** error for local modules you might have required when browserify trys to re-bundle your module.
+
+Publish to npm with `npm publish` from the directory you're in.
+
+In your **index.js** you can do this
+
+```javascript
+//The "index.js file"
+export default class Thing {
+    speak(){
+        var str = '<p>I am a thing object.</p>';
+        //This won't work in node, but whatever.
+        document.querySelector('body').innerHTML += str;
+    }
+}
+```
+After you've published to **npm** run `npm install mymodule` in the command line.
+
+After you've installed your script from **npm** in your application javascript
+
+```javascript
+//thing.js
+import Thing from "mymodule";
+var thing = new Thing();
+thing.speak();
+```
+
+The module works without a path.
+
+If you're using jumble your html should look like this.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+</head>
+<body>
+<script src="thing.js"></script>
+<script>
+//do some stuff
+</script>
+
+</body>
+</html>
+```
+
+Run `jumble` in the directory that has your html, and scripts.
+
+Remember you can also browserify with babelify again, or include `dist/bundle.js` in a script tag. There are other options not listed here. Read about **umd** if you haven't been introduced to it yet.
+
+### Another way to do es6 modules
 
 In your package.json add these fields
 
 ```json
 {
-    "name": "module_name",
+    "name": "mymodule",
     "main": "index.js",
+    "version": <version>,
     "dependencies": {
         "babelify": "{version number}"
     },
@@ -93,30 +169,8 @@ In your package.json add these fields
 
 to allow jumble to browserify your es6 module to bundles.
 
-You can then
 
-```javascript
-//The "index.js file"
-export default class Thing {
-    speak(){
-        var str = '<p>I am a thing object.</p>';
-        document.querySelector('body').innerHTML += str;
-    }
-}
-```
-
-then in your application javascript
-
-```javascript
-//My application
-import Thing from "module_name";
-var thing = new Thing();
-thing.speak();
-```
-
-The module_name works without a path.
-
-**Please make sure that somewhere in your module documentation you let users know it's an es6 only module.** I don't know if you can conditional support es6, and commonjs. The node environment might belch on syntax errors. Perhaps an harmony flag can be set when you run node. Otherwise there's always io.js :).
+**This is risky. Please make sure that somewhere in your module documentation you let users know it's an es6 only module.** I don't know if you can conditional support es6, and commonjs. The node environment might belch on syntax errors. Perhaps an harmony flag can be set when you run node. Otherwise there's always io.js :).
 
 The Manifest
 ------------
