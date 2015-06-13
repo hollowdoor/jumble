@@ -3,10 +3,10 @@ var path = require('path'),
     bundle = require('./lib/bundle'),
     watch = require('./lib/watch'),
     startServer = require('./lib/startserver'),
-    
+
     argv = require('yargs')
         .alias('w', 'watch')
-        
+
         .alias('e', 'es6')
         .alias('r', 'raw')
         .alias('n', 'name')
@@ -43,13 +43,13 @@ module.exports.watch = watch;
 
 
 if(require.main === module){
-    
+
     var b = run(),
         opts = b.options;
-    
+
     if(argv.watch)
         watch(opts, run);
-    
+
     if(argv.server){
         startServer({
             destination:opts.destination,
@@ -59,9 +59,9 @@ if(require.main === module){
 }
 
 function run(){
-    
+
     var options = {};
-    
+
     if(argv._.length){
         if(argv._[0].length > 2){
             options.destination = argv._[0];
@@ -72,30 +72,30 @@ function run(){
         if(argv[n])
             options[n] = argv[n];
     }
-    
+
     var b = make(options);
-    
+
     b.on('error', function(e){
         console.log(e);
     });
-    
+
     b.on('complete', function(packname){
-        console.log('jumble is done writing everything!');
+        console.log('...done!');
     });
-    
+
     return b;
 }
 
 function make(opts){
-    
+
     var options = require('./lib/read_json')();
-    
+
     for(var n in opts)
         options[n] = opts[n];
-    
+
     var b = bundle(options.main, options);
-    
-    
-    
+
+
+
     return b;
 }
