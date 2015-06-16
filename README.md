@@ -45,22 +45,19 @@ user@computer:~$ jumble destination {options}
 
     --watch, -w         Watch the current directory for changes.
                         When there's a change rebuild the project.
-    
+
     --minify -m         Minify the output of javascript.
                         The default is true.
-    
+
     --es6, -e           Compile es6 code using Babel.js.
-    
-    --raw, -r           Include a raw field in the produced json
-                        with unmodified code for each script.
-    
+
     --name, -n          The name of your project.
-    
+
     --server -s         -s, -s=8080, -s=folder:8080
                         Start a static server.
                         The value should be a port number or a directory, and port seperated by a colon.
-                        If there's no value then jumble will scan for an available port. 
-    
+                        If there's no value then jumble will scan for an available port.
+
 ```
 
 Notes on the es6 option.
@@ -182,13 +179,13 @@ These are the manifest file names it will look for.
 ```
     manifest.json   You have a standard package file.
                     This is preferred, but the world is not so easy.
-    
+
     jumble.json     In lieu of anything else.
-    
+
     package.json    You like node style packages.
-    
+
     manifest.webapp You're supporting firefox os.
-    
+
 ```
 
 If a link element in the html has a `rel` attribute value of **manifest** then Jumble will look for the file set in the `src` attribute of that link.
@@ -216,17 +213,17 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 
 ```
     name        It's optional, but it is used.
-    
+
     main        The main html file. These fields can be used instead:
                 start, launch_path, start_url.
-    
+
     minify      Minify output. Optional defaulting to true.
-    
+
     es6         Use Babel to process es6 code. Optional defaulting to false.
-    
+
     desination  The folder to put the built application.
                 The default is dist.
-    
+
 ```
 
 ### Other useful manifest fields.
@@ -236,11 +233,11 @@ If a manifest is not found, or one of those fields are not found in a manifest t
                 Most likely css. Even though it's an array
                 no other types can be inline yet. The
                 default is ['css']
-                
+
     files       Non-script files to move with the build.
-    
+
     directories Move these directories with the build.
-    
+
     ignore      If you use the watch option these files, and
                 folders will be ignored.
 ```
