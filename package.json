@@ -11,7 +11,6 @@
         "yargs": "3.*",
         "chokidar": "1.*",
         "graceful-fs": "3.*",
-        "cheerio": "0.*",
         "ncp": "2.*",
         "rimraf": "2.*",
         "babelify": "6.*",
@@ -21,7 +20,9 @@
         "syntax-error": "1.*",
         "mime": "1.*",
         "tmp": "0.*",
-        "derequire": "2.*"
+        "derequire": "2.*",
+        "cheerio": "0.*",
+        "get-html-assets": "0.0.*"
     },
     "bin": {
         "jumble": "./index.js"
