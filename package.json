@@ -22,7 +22,8 @@
         "tmp": "0.*",
         "derequire": "2.*",
         "cheerio": "0.*",
-        "get-html-assets": "0.0.*"
+        "get-html-assets": "0.0.*",
+        "minimatch": "2.*"
     },
     "bin": {
         "jumble": "./index.js"
