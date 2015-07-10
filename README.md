@@ -228,11 +228,10 @@ If a manifest is not found, or one of those fields are not found in a manifest t
 
 ### Other useful manifest fields.
 
+**Note the ability to make something inline has been removed. I've taken notice of the new paradigm with HTTP2, and have decided it's not worth it to keep supporting inline files being that HTTP2 will make the need for them obsolete.**
+
 ```
-    inline      An array of file types to make inline.
-                Most likely css. Even though it's an array
-                no other types can be inline yet. The
-                default is ['css']
+    inline      capability removed
 
     files       Non-script files to move with the build.
 
